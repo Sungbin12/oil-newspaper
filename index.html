@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS : 오일 신문</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #opening-content, #closed-content {
+            display: none;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        p {
+            color: #555;
+        }
+
+        #closed-content {
+            display: block;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="content" id="opening-content">
+        <h1>사이트가 오픈되었습니다!</h1>
+        <p>지금 당장 오일 신문 사이트를 이용해보세요!</p>
+        <a href="main.html" class="button">오일 신문 사이트 이동</a>
+    </div>
+
+    <div class="content" id="closed-content">
+        <h1>🚧 사이트가 아직 오픈되지 않았습니다. 🕒</h1>
+        <p>버튼을 누르면 이전 사이트로 돌아갑니다.</p>
+        <button class="button" onclick="history.back();">이전 사이트로 돌아가기</button>
+    </div>
+
+    <script>
+        var targetDate = new Date(2024, 0, 6, 18, 0, 0);
+
+        window.onload = function() {
+            checkOpenStatus();
+        };
+
+        setInterval(function() {
+            checkOpenStatus();
+        }, 1000);
+
+        function checkOpenStatus() {
+            var now = new Date();
+
+            if (now >= targetDate) {
+                document.getElementById('opening-content').style.display = 'block';
+                document.getElementById('closed-content').style.display = 'none';
+            } else {
+                document.getElementById('opening-content').style.display = 'none';
+                document.getElementById('closed-content').style.display = 'block';
+            }
+        }
+
+        function goBack() {
+            // 이전 페이지로 이동하는 코드를 여기에 추가
+            // 예를 들면 window.location.href = '이전 페이지 URL';
+        }
+    </script>
+</body>
+</html>
