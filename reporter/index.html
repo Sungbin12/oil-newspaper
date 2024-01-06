@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오일 신문 기자</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 28px;
+    }
+
+    .journalist-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .journalist {
+      margin: 15px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fafafa;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      width: 200px;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; /* 이름이 칸 안에 수직으로 표시되도록 설정 */
+    }
+
+    .journalist:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    오일 신문 기자
+  </header>
+
+  <div class="journalist-list">
+    <a href="sungbin.html" class="journalist">
+      <h3>박성빈 기자</h3>
+    </a>
+
+    <a href="yujin.html" class="journalist">
+      <h3>손유진 기자</h3>
+    </a>
+
+    <!-- 기타 기자 정보 추가 -->
+
+  </div>
+
+</body>
+</html>
