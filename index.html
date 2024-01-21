@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>오일 신문</title>
+    <!-- Google Fonts에서 Noto Sans KR 폰트 링크 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap">
+    <!-- 부트스트랩 CSS 링크 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!--점검 부분 통제 js-->
+    <script type="text/javascript">
+ 
+        if (new Date() >= new Date('01/21/2024 08:00:00')            // 언제부터
+            && new Date() < new Date('01/25/2024 10:00:00')) {        // 언제까지 실행하기 
+            alert('서비스 점검 중입니다.\n대체 사이트로 이동합니다.\n-ABS 오일 신문-');
+            location.href = "update"; // alert에서 확인 누르고 나면 실행되는 코드
+        }
+        </script>
+    <header class="bg-dark text-white text-center py-4">
+        <h1>오일 신문</h1>
+        <p class="lead">5학년 1반의 신문, 오일 신문</p>
+    </header>
+    <nav class="navbar navbar-dark bg-secondary justify-content-center">
+        <a class="nav-link text-white" href="2024. 01. 15 오일 신문\oil newspaper list.html">최근 오일 신문 기사</a>
+        <a class="nav-link text-white" href="속보">속보</a>
+        <a class="nav-link text-white" href="reporter">기자</a>
+        <a class="nav-link text-white" href="제보">오일 신문 제보</a>
+        <a id="loginLink" class="nav-link text-white" href="로그인">로그인</a>
+        <a id="logoutLink" class="nav-link text-white" href="로그인/logout.html">로그아웃</a>
+        <a id="jabo" class="nav-link text-white" href="report send">기사 내용 보내기</a>
+        <!--로그인 상태 확인 로직--> <!--로그인 시, 쿠키 생성/로그아웃 시, 자동 쿠키 삭제로 로그아웃 처리/24시간 후, 자동 쿠키 삭제로 로그아웃 처리-->
+        <script src="cooki.js"></script>
+        
+          
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                      <div class="center-wrapper"></div>
+                    <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202401/07/e5cf6036-727d-4f65-9ee2-ca331022c89b.jpg" class="rounded-image" width="500">
+                    <div class="card-body">
+                        <h3 class="card-title">北, 이틀연속 서해상 도발…연평도 북서방에 해안포 60여발 쏴</h3>
+                        <p class="card-text">김정은 북한 국무위원장이 지난 2020년 3월 20일 서부전선대연합부대의 포사격대항경기를 지도하고 정세에 맞게 포병부대의 훈련 강화를 지시했다고 조선중앙통신이 21일 보도했다.<br>(사진출처/연합뉴스, 중앙일보)</p>
+                        <div class="atag">
+                            <a href="https://www.joongang.co.kr/article/25220134#home" class="btn btn-primary" target="_blank">기사 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">2024년 1월 15일자 오일 신문</p>
+                        <div class="atag">
+                            <a href="pdf.html" class="btn btn-primary" target="_blank">PDF 파일 보기</a>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 ABS. All rights reserved.</p>
+    </footer>
+
+    <!-- 부트스트랩 JS 및 Popper.js, jQuery 스크립트 링크 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
