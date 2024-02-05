@@ -53,7 +53,8 @@
     <h2>로그인</h2>
     <input type="password" id="password-input" placeholder="Enter Password">
     <button id="login-button" onclick="login()">Login</button>
-
+<br>
+<img src="그림1.png" width="400"/>
     <!-- 비밀번호 배열을 세로로 표시 -->
     
 </div>
@@ -84,24 +85,6 @@
             location.reload();
         }
     }
-</script>
-<script>
-// 목표 날짜와 시간 설정 (년, 월(0부터 시작), 일, 시, 분, 초)
-var targetDateTime = new Date(2024, 2, 6, 21, 0, 0); // 2024년 6월 1일 12:00:00
-
-// 현재 날짜와 시간 가져오기
-var currentDateTime = new Date();
-
-// 목표 날짜와 비교
-if (currentDateTime >= targetDateTime) {
-    // 현재 날짜와 시간이 목표 날짜와 시간 이후일 경우
-    console.log("시간 이후. 이벤트 없음");
-} else {
-    // 현재 날짜와 시간이 목표 날짜와 시간 이전일 경우
-    alert("21시 00분 전까지는 접근 금지 페이지입니다.\n21시 00분 이후에 시도하십시오.\n확인을 누르면 메인 페이지로 이동합니다.");
-    window.location.href = '../../../../';
-}
-
 </script>
 
 </body>
