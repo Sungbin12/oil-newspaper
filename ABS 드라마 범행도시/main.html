@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS 드라마 "범행도시"</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style>
+        * {
+    font-family: 'Pretendard', sans-serif;
+}
+        </style>
+    <style>
+        body {
+            background-color: #9bff9b; /* 초록색 배경 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 화면 전체 높이에 대한 100% */
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif; /* 사용할 폰트 지정 */
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #000000; /* 흰색 글자색 */
+        }
+
+        p {
+            color: #000000; /* 흰색 글자색 */
+        }
+    </style>
+    <script>
+        // 쿠키 확인 함수
+        function checkCookie() {
+          // 쿠키 이름 설정
+          var cookieName = "absdrama";
+      
+          // 쿠키 가져오기
+          var cookieValue = getCookie(cookieName);
+      
+          // 쿠키가 없으면 알림 표시 및 다른 페이지로 이동
+          if (cookieValue === "") {
+            alert("올바른 요청이 아닙니다");
+            // 다른 페이지로 이동 (예: "another_page.html")
+            window.location.href = "login.html";
+          }
+          // 쿠키가 있으면 아무 이벤트 없이 유지
+        }
+      
+        // 쿠키 가져오기 함수
+        function getCookie(name) {
+          var cookieName = name + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var cookieArray = decodedCookie.split(';');
+      
+          for(var i = 0; i < cookieArray.length; i++) {
+            var cookie = cookieArray[i].trim();
+            if (cookie.indexOf(cookieName) === 0) {
+              return cookie.substring(cookieName.length, cookie.length);
+            }
+          }
+          return "";
+        }
+      
+        // 페이지 로드 시 쿠키 확인 실행
+        window.onload = checkCookie;
+      </script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>ABS 드라마 "범행도시"</h1>
+        <iframe src="https://player.vimeo.com/video/910003462?h=3af5608593" width="1000" height="400" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <p>시청 권장 해상도는 기본으로 설정되는 720p가 아닌 1080p입니다!<br>1080p로 시청하시면 더욱더 깔끔한 화질로 시청 할 수 있습니다!</p>
+        <p>드라마 다운로드 문의는 absdrama@naver.com으로 문의부탁드립니다.</p>
+    </div>
+</body>
+</html>

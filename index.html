@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>오일 신문</title>
+    <!-- Google Fonts에서 Noto Sans KR 폰트 링크 -->
+    
+    <!-- 부트스트랩 CSS 링크 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style>
+        * button{
+    font-family: 'Pretendard', sans-serif;
+}
+        </style>
+            
+</head>
+<body>
+    <!--점검 부분 통제 js--
+    <script type="text/javascript">
+ 
+        if (new Date() >= new Date('03/04/2024 20:00:00')            // 언제부터
+            && new Date() < new Date('01/25/2028 10:00:00')) {        // 언제까지 실행하기 
+            alert('2024년 3월 4일 오후 8시부로 홈페이지 서비스 종료 되었습니다.');
+            location.href = "서비스 종료.html"; // alert에서 확인 누르고 나면 실행되는 코드
+        }
+        </script>
+        <!--메인 팝업-->
+        <div id="popupContainer" class="popup">
+                <div class="popup-content">
+                    <span id="closePopupButton" class="close">&times;</span>
+                    <h2>ABS 오일신문 9월 발행 안내</h2>
+                    <hr>
+                    <img src="안내.png" alt=" style= border-radius="5%"; width="450px;">
+                    <hr>
+                    <button class="hide-for-day">오늘 하루 동안 보지 않기</button>
+                    <button class="close-popup">닫기</button>
+                </div>
+            </div>
+            <script src="script.js"></script>
+             <!--메인 팝업-->
+    <header class="bg-dark text-white text-center py-4">
+        
+        <h1>오일 신문</h1>
+        <p class="lead">5학년 1반의 신문, 오일 신문</p>
+    </header>
+    <nav class="navbar navbar-dark bg-secondary justify-content-center">
+        <a class="nav-link text-white" href="2024. 09. 오일신문/oil newspaper list.html">최근 오일 신문 기사</a>
+        <a class="nav-link text-white" href="속보">속보</a>
+        <a class="nav-link text-white" href="reporter">기자</a>
+        <a class="nav-link text-white" href="제보">오일 신문 제보</a>
+        <a class="nav-link text-white" href="ABS 드라마 범행도시/login.html">ABS 드라마 "범행도시"</a>
+        <a class="nav-link text-white" href="https://youtube.com/@2024abs">ABS 공식 유튜브</a>
+        <a id="loginLink" class="nav-link text-white" href="로그인">로그인</a>
+        <a id="logoutLink" class="nav-link text-white" href="로그인/logout.html">로그아웃</a>
+        <a id="jabo" class="nav-link text-white" href="report send">기사 내용 보내기</a>
+        <!--로그인 상태 확인 로직--> <!--로그인 시, 쿠키 생성/로그아웃 시, 자동 쿠키 삭제로 로그아웃 처리/24시간 후, 자동 쿠키 삭제로 로그아웃 처리-->
+        <script src="cooki.js"></script>
+        
+          
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                      <div class="center-wrapper"></div>
+                    <img src="이미지 없음.png" class="rounded-image" height="100">
+                    <div class="card-body">
+                        <h3 class="card-title">No image</h3>
+                        <p class="card-text">TEST/Pretendard<br>(사진출처/-)</p>
+                        <div class="atag">
+                            <a href="#" class="btn btn-primary" target="_blank">기사 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">2024년 9월 오일 신문</p>
+                        <div class="atag">
+                            <a href="pdf" class="btn btn-primary" target="_blank">신문 보기</a>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-dark text-white text-center py-4">
+        <div></div><p>&copy; 2024 ABS. All rights reserved.　
+            <script language="javascript" type="text/javascript">
+            // 드롭다운리스트의 항목 선택시 해당 사이트로 이동하는 기능
+            function HawasoFamilySite(obj) {
+                if (obj.value != "#") {
+                    location.href = obj.value;    
+                }
+            }
+            </script>
+            <select id="ddlFamilySite" name="ddlFamilySite" onchange="HawasoFamilySite(this);">
+                <option value="#">-패밀리 사이트-</option>
+                <option value="https://oil-abs.com">ABS</option>
+                <option value="https://studio.oil-abs.com">ABS STUDIO</option>
+                <option value="https://51newspaper.oil-abs.com">오일 신문 [현재 접속 중]</option>
+            </select>
+        </div>
+            </select>
+        
+        
+    </footer>
+
+    <!-- 부트스트랩 JS 및 Popper.js, jQuery 스크립트 링크 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
