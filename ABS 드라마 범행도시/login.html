@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS 드라마 범행도시: 인증</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style>
+        * {
+    font-family: 'Pretendard', sans-serif;
+}
+        </style> 
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif; /* 사용할 폰트 지정 */
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #login-container {
+            font-family: 'Noto Sans KR', sans-serif; /* 사용할 폰트 지정 */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #password-input {
+            font-family: 'Noto Sans KR', sans-serif; /* 사용할 폰트 지정 */
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        #login-button {
+            font-family: 'Noto Sans KR', sans-serif; /* 사용할 폰트 지정 */
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #login-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="login-container">
+    <h2>로그인</h2>
+    <input type="password" id="password-input" placeholder="Enter Password">
+    <button id="login-button" onclick="login()">Login</button>
+<br>
+<img src="그림1.png" width="400"/>
+    <!-- 비밀번호 배열을 세로로 표시 -->
+    
+</div>
+
+<script>
+    // 미리 정의된 비밀번호 배열
+    const validPasswords = ["5101",	"5102",	"5103",	"5104",	"5105",	"5106",	"5107",	"5108",	"5109",	"5110",	"5111",	"5112",	"5113",	"5114",	"5115",	"5116",	"5117",	"5118",	"5119",	"5120",	"5121",	"5122",	"5123",	"5124"];
+
+    function login() {
+        // 입력된 비밀번호 가져오기
+        const enteredPassword = document.getElementById("password-input").value;
+
+        // 비밀번호가 유효한지 확인
+        if (validPasswords.includes(enteredPassword)) {
+            // 현재 날짜와 시간을 가져오기
+            const now = new Date();
+
+            // 24시간 후의 시간을 계산
+            now.setTime(now.getTime() + 24 * 60 * 60 * 1000);
+
+            // 쿠키 이름을 'myCustomCookie'로 설정하고 로그인 성공 시 쿠키 생성 (24시간 동안 유효)
+            document.cookie = `absdrama=true; expires=${now.toUTCString()}; path=/`;
+
+            // 다른 사이트로 이동
+            window.location.href = "main.html"; // 이동할 사이트 주소를 수정하세요
+        } else {
+            alert("비밀번호가 올바르지 않습니다.\n다시 시도하십시오.");
+            location.reload();
+        }
+    }
+</script>
+
+</body>
+</html>

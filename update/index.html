@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업데이트 페이지</title>
+    <!-- 부트스트랩 CDN 추가 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style>
+        * {
+    font-family: 'Pretendard', sans-serif;
+}
+        </style>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        #updateInProgress, #updateComplete {
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="updateInProgress">
+        <h1 class="text-info">업데이트 중...</h1>
+    </div>
+
+    <div id="updateComplete" style="display: none;">
+        <h1 class="text-success">업데이트 완료</h1>
+        <p id="redirectMessage" class="text-secondary">다른 페이지로 이동합니다.</p>
+    </div>
+</div>
+
+<script>
+    // 사용자가 지정한 업데이트 완료 시간 (년, 월(0-11), 일, 시간, 분)
+    var updateCompleteTime = new Date(2024, 0, 25, 10, 00); // 예: 2024년 1월 22일 12시 30분
+
+    // 업데이트 중 페이지 표시
+    document.getElementById('updateInProgress').style.display = 'block';
+
+    // 업데이트 완료 후 페이지 표시 및 이동 설정
+    setTimeout(function () {
+        document.getElementById('updateInProgress').style.display = 'none';
+        document.getElementById('updateComplete').style.display = 'block';
+        redirectToAnotherPage();
+    }, updateCompleteTime.getTime() - Date.now());
+
+    // 일정 시간이 지난 후 다른 페이지로 이동하는 함수
+    function redirectToAnotherPage() {
+        var redirectMessageElement = document.getElementById('redirectMessage');
+
+        function updateRedirectMessage() {
+            // 시간이 다 되었으면 다른 페이지로 이동
+            window.location.href = '../../';
+        }
+
+        // 초기 호출
+        updateRedirectMessage();
+    }
+</script>
+
+<!-- 부트스트랩 JS 및 popper.js 추가 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

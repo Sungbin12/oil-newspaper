@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인증번호 입력</title>
+    <!-- Pretendard 폰트 링크 추가 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+    <style>
+        * {
+            font-family: 'Pretendard', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 360px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+        .timer {
+            font-size: 20px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        input {
+            width: calc(100% - 22px);
+            padding: 15px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #0056b3;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 16px;
+            display: none;
+        }
+        .message.success {
+            color: #28a745;
+        }
+        .message.error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>인증번호 입력</h1>
+        <div class="timer">
+            남은 시간: <span id="minutes">1</span>분 <span id="seconds">00</span>초
+        </div>
+        <form id="verificationForm">
+            <input type="text" id="verificationCode" placeholder="인증번호를 입력하세요" required>
+            <button type="submit">제출</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+        let timerInterval;
+        let timeLeft = 59; // 1분
+        let timerStarted = false; // 타이머 중복 시작 방지 플래그
+
+        function startTimer() {
+            if (timerStarted) return; // 이미 타이머가 시작되었으면 아무 것도 하지 않음
+            timerStarted = true;
+
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            
+            timerInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                minutesElement.textContent = minutes;
+                secondsElement.textContent = seconds.toString().padStart(2, '0'); // 항상 두 자리 숫자로 표시
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    minutesElement.textContent = '00';
+                    secondsElement.textContent = '00';
+                    const timerElement = document.querySelector('.timer');
+                    timerElement.textContent = '시간 초과되었습니다.';
+                    timerElement.style.color = '#dc3545'; // 빨간색으로 표시
+                    document.getElementById('verificationCode').disabled = true; // 입력 비활성화
+                    setTimeout(() => {
+                        alert('인증번호 입력 시간이 초과하였습니다.\n메인 페이지로 이동합니다.');
+                        window.location.href = '../'; // 시간 초과 후 이동할 페이지 URL로 변경
+                    }, 100); // alert 호출 후 페이지 이동을 위해 약간의 지연을 추가
+                } else {
+                    timeLeft -= 1;
+                }
+            }, 1000);
+        }
+
+        document.getElementById('verificationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const validCodes = ['123456', '234567', '345678']; // 유효한 인증번호들
+            const userCode = document.getElementById('verificationCode').value;
+
+            if (validCodes.includes(userCode)) {
+                // 인증번호가 유효한 경우 다음 페이지로 리디렉션
+                window.location.href = 'Terms of Use.html'; // 실제로 이동할 페이지 URL로 변경
+            } else {
+                const message = document.getElementById('message');
+                message.textContent = '인증번호가 유효하지 않습니다.';
+                message.className = 'message error';
+                message.style.display = 'block';
+            }
+        });
+
+        // 페이지 로드 시 타이머 자동 시작
+        window.onload = function() {
+            startTimer();
+        };
+    </script>
+</body>
+</html>
