@@ -23,7 +23,7 @@
 
         if (!hasCookie) {
             // 쿠키가 없으면 알림을 띄우고 페이지를 이동
-            alert('쿠키가 존재하지 않습니다. 페이지를 이동합니다.');
+            alert('정상적인 방식으로 접속하지 않았습니다.\n메인페이지로 이동합니다.');
             window.location.href = '../'; // 원하는 페이지 URL로 변경
         }
     }
@@ -72,7 +72,7 @@
             <button class="btn btn-outline-light btn-sm" id="zoom-out">Zoom Out</button>
             <button class="btn btn-outline-light btn-sm" id="zoom-in">Zoom In</button>
         </div>
-        <a href="../이미지 없음.png" download><button class="btn btn-outline-light btn-sm">다운로드</button></a>
+        <a href="2024. 09. 02. (월) No. 8 온라인 발행 오일신문.pdf" download><button class="btn btn-outline-light btn-sm">다운로드</button></a>
     </div>
 
     <div id="pdf-viewer"></div>
@@ -87,7 +87,7 @@
             var pdfjsLib = window['pdfjs-dist/build/pdf'];
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
 
-            var loadingTask = pdfjsLib.getDocument('../이미지 없음.png');
+            var loadingTask = pdfjsLib.getDocument('2024. 09. 02. (월) No. 8 온라인 발행 오일신문.pdf');
             var currentScale = 1.5; // Initial scale
 
             loadingTask.promise.then(function (pdfDocument) {
