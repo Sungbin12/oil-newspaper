@@ -77,6 +77,20 @@
 </style>
 </head>
 <body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+        
+            if (getCookie('exampleCookie')) {
+                alert('1시간 이전에 이용약관에 동의한 기록이 있으므로 다음 페이지로 넘어갑니다.\n1시간 전에 이용약관에 동의 했으므로, 동의한 사항을 지키지 않아 생긴 불이익은 본인이 모두 부담합니다.');
+                window.location.href = 'list.html'; // 이동할 URL로 변경하세요
+            }
+        });
+        </script>
 <div class="container">
     <h1>ABS STUDIO 방영(시청) 이용약관</h1>
     <div id="terms-container">
@@ -460,5 +474,6 @@
         window.location.href = 'Cheak.html'; // 실제 다음 페이지의 URL로 변경
     });
 </script>
+
 </body>
 </html>
