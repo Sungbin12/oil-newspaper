@@ -41,11 +41,46 @@
             font-size: 50px;
             color: #333;
         }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #timer {
+            font-size: 1em;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="text-box">
-        <b>뿅뿅 오일오락실 2화 방영 준비 중입니다!<br>8시 35분에 공개됩니다!</b>
+        <b>뿅뿅 오일오락실 2화 방영 준비 중입니다!<br><br>남은 시간</b>
+        <div id="timer"></div>
+
+        <script>
+            // 설정할 날짜와 시간 (예: 2024년 12월 31일 23시 59분 59초)
+            const targetDateTime = new Date("2024-09-27T20:35:00").getTime();
+    
+            const timerDisplay = document.getElementById('timer');
+    
+            const countdown = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = targetDateTime - now;
+    
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    timerDisplay.innerHTML = ""; // 타이머가 종료되면 아무것도 표시하지 않음
+                    return;
+                }
+    
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                timerDisplay.innerHTML = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
+            }, 1000);
+        </script>
     </div>
 </body>
 </html>
