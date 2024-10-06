@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABS STUDIO 방영(시청) 이용약관</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <style>
         * {
     font-family: 'Pretendard', sans-serif;
 }
 </style>
+
 <style>
     body {
         font-family: 'Pretendard', sans-serif;
@@ -74,14 +76,53 @@
         outline: none;
         box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
     }
+  
+
 </style>
+
 </head>
 <body>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>window.onload = function() {
+        Swal.fire({
+            title: '뿅뿅 오일오락실 방영 문제에 대해서 안내드립니다.',
+            html: '지난 27일에 방영된 2화가 2023학년도 5학년 1반 학생이 아닌 학생에게 유출이 된 것으로 확인되었습니다.<br>따라서 유출자를 찾아 처벌을 완료하였으니, 이러한 일이 다시는 일어나지 않도록 같이 볼 경우에는 작년 5학년 1반 학생들과 함께 보시기 바랍니다.<br>같이 볼 때 작년 5학년 1반 학생이 아닌 다른 학생과 볼 경우에는 뿅뿅 오일오락실 방영 이용약관에 따라서 처벌 받을 수 있습니다.',
+            icon: 'warning',
+            confirmButtonText: '확인'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            // 다시 한 번 확인하는 alert
+            Swal.fire({
+                title: '동의하십니까?',
+                
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonText: '예',
+                cancelButtonText: '아니요'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('동의하셨습니다.', '뿅뿅 오일오락실 방영 이용약관을 천천히 꼼꼼하게 읽으신 뒤에 이용약관에 동의해주세요', 'success');
+                } else {
+                    Swal.fire({
+                        title: '동의하지 않으셨습니다.',
+                        html: '동의하지 않으신다면 뿅뿅 오일오락실을 시청하실 수 없습니다.<br>다시 읽으신 후에 동의해주세요.',
+                        icon: 'warning'
+                    }).then(() => {
+                        location.reload(); // 페이지 새로고침
+                    });
+                }
+            });
+        }
+    });
+};
+</script>
+    </script>
+
+    <!-- 임시 접근 금지 제한 <script>
         window.onload = function() {
             window.location.replace("../../../../../");
         };
-    </script>
+    </script>-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             function getCookie(name) {
@@ -96,6 +137,7 @@
             }
         });
         </script>
+        
 <div class="container">
     <h1>ABS STUDIO 방영(시청) 이용약관</h1>
     <div id="terms-container">
