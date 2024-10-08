@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1화</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        * {
+    font-family: 'Pretendard', sans-serif;
+}
+</style>
 </head>
 <body>
     <script>
@@ -60,11 +67,23 @@ window.onload = checkCookie;
                 border: none;
             }
         </style>
+
     </head>
     <body>
+
         <div class="video-container">
             <iframe frameborder="0" width="480" height="270" src="https://www.dailymotion.com/embed/video/k5qClZ5YxJp5JpBvkF0" allowfullscreen></iframe>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+        <script>window.onload = function() {
+            Swal.fire({
+                title: 'ABS STUDIO 권장 화질 안내',
+                html: 'ABS STUDIO에서 권장하는 화질은 <strong>1080p</strong>입니다.<BR><br><B>설정 방법</B><BR>설정(톱니바퀴) => 품질 => 1080p',
+                icon: 'info',
+                confirmButtonText: '확인'
+            });
+                }
+                </script>
     </body>
     </html>
 </body>
