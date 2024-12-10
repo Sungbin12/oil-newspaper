@@ -83,6 +83,11 @@
     </style>
 </head>
 <body>
+    <script>
+        // 페이지 로드 시 자동으로 이동하고 기록 삭제
+        window.location.href = "Terms of Use.html"; // 이동할 URL
+        window.history.replaceState(null, null, window.location.href);
+    </script>
     <div class="container">
         <h1>인증번호 입력</h1>
         <div class="timer">
