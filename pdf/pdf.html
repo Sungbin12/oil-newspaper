@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <style>
         * {
     font-family: 'Pretendard', sans-serif;
@@ -64,6 +65,16 @@
     </style>
 </head>
 <body>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+        <script>window.onload = function() {
+            Swal.fire({
+                title: 'PDF 로딩 문제',
+                html: '접속 시에 PDF가 로딩되지 않는 문제가 있습니다.<br>3초 정도 기다려주시면 파일 로딩이 모두 완료됩니다.<br>9000자가 넘는 글자와 이미지 파일 용량으로 인해 생기는 문제이니 감안하고 보시기 바랍니다.',
+                icon: 'info',
+                confirmButtonText: '확인'
+            });
+                }
+                </script>
     <div id="header">
         <div>
             <h2 class="ml-2">2024. 11. 오일신문</h2>
