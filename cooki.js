@@ -10,17 +10,23 @@
         const loginLink = document.getElementById("loginLink");
         const logoutLink = document.getElementById("logoutLink");
         const articleLink = document.getElementById("jabo");
+        const articleLink1 = document.getElementById("20241");
+        const articleLink2 = document.getElementById("20242");
 
         if (checkLoginStatus()) {
             // 로그인 상태일 때 설정
             loginLink.style.display = "none";
             logoutLink.style.display = "block";
             articleLink.style.display = "block";
+            articleLink1.style.display = "block";
+            articleLink2.style.display = "block";
         } else {
             // 비로그인 상태일 때 설정
             loginLink.style.display = "block";
             logoutLink.style.display = "none";
             articleLink.style.display = "none";
+            articleLink1.style.display = "none";
+            articleLink2.style.display = "none";
         }
     }
 
