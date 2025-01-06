@@ -3,8 +3,18 @@ function performLogin() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // 간단한 시뮬레이션: 사용자 이름이 "user"이고 비밀번호가 "password"인 경우 로그인 성공으로 가정
-    if (username === "cuteyujin" && password === "dbwls0507!!") {
+    // 여러 사용자 정보 (아이디와 비밀번호 배열로 저장)
+    const users = [
+        { username: "cuteyujin", password: "dbwls0507!!" },
+        { username: "logindatabass", password: "admin" },
+        { username: "abs", password: "abs123" },
+        // 추가 사용자 정보는 여기에 추가
+    ];
+
+    // 입력한 아이디와 비밀번호가 배열의 사용자 정보와 일치하는지 확인
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (user) {
         // 쿠키 만료 시간 설정 (현재 시간 + 24시간)
         const expirationDate = new Date();
         expirationDate.setTime(expirationDate.getTime() + (24 * 60 * 60 * 1000));
