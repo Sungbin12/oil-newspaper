@@ -131,7 +131,7 @@ h1 {
 
 /* 세로줄 스타일 (얇게 수정) */
 .vertical-line {
-    border-left: 1px solid black;  /* 세로줄 두께를 1px로 수정 */
+    border-left: 1px solid #ddd;  /* 세로줄 두께를 1px로 수정 */
     height: 30px;  /* 줄의 길이 */
     margin-right: 10px;  /* 줄과 링크 간 간격 */
 }
@@ -146,3 +146,45 @@ h1 {
 .file-link:hover {
     text-decoration: underline;  /* 밑줄 추가 */
 }
+/* 아코디언 메뉴 시작*/
+.collapsible {
+            background-color: #777;
+            color: white;
+            border-radius: 15px;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 17px;
+            
+        }
+        .active,
+        .collapsible:hover {
+            background-color: #555;
+            
+        }
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            color: rgba(0, 0, 0, 0.701);
+            font-size: 16px;
+            margin-bottom: 20px;  /* 상단 여백 */
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+            
+        }
+        .active:after {
+            content: "\2212";
+            
+        }
