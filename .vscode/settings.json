@@ -1,4 +1,11 @@
 {
     "liveServer.settings.port": 5897,
-    "livePreview.defaultPreviewPath": "/공지사항/index.html"
+    "livePreview.customExternalBrowser": "Chrome",
+    "livePreview.openPreviewTarget": "External Browser",
+    "livePreview.serverKeepAliveAfterEmbeddedPreviewClose": 0,
+    "livePreview.httpHeaders": {
+
+        "Accept-Ranges": "bytes"
+    },
+    "livePreview.defaultPreviewPath": "/index.html"
 }
