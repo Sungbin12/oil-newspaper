@@ -32,6 +32,8 @@ See https://github.com/adobe-type-tools/cmap-resources
 <link rel="resource" type="application/l10n" href="locale/locale.json">
 <script src="../build/pdf.mjs" type="module"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<script src="pdf.js"></script>
     <link rel="stylesheet" href="viewer.css">
     <style>
       * {
@@ -40,32 +42,8 @@ See https://github.com/adobe-type-tools/cmap-resources
       </style>
   <script src="viewer.mjs" type="module"></script>
   </head>
-  <script>
-    function checkCookie() {
-        // 'oilnewspaper' 쿠키가 존재하는지 확인
-        const cookieName = 'oilnewspaper=';
-        const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-        const hasCookie = cookies.some(cookie => cookie.startsWith(cookieName));
 
-        if (!hasCookie) {
-            // 쿠키가 없으면 알림을 띄우고 페이지를 이동
-            alert('정상적인 방식으로 접속하지 않았습니다.\인증 페이지로 이동합니다.');
-            window.location.href = '../'; // 원하는 페이지 URL로 변경
-        }
-    }
 
-    window.onload = checkCookie;
-</script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-        <script>window.onload = function() {
-            Swal.fire({
-                title: 'PDF Viewer 변경 안내',
-                html: 'PDF 로딩 문제로 PDF Viewer이 변경되었으니, 서비스 이용에 불편 없으시길 바랍니다.',
-                icon: 'info',
-                confirmButtonText: '확인'
-            });
-                }
-                </script>
 <h1 class="ml-2">　2024. 12. 오일신문</h1>
   <body tabindex="0">
     <div id="outerContainer">

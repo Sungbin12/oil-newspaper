@@ -24,7 +24,18 @@
         color: #fff;
         text-align: center;
         padding: 1em;
+        position: fixed;
+        bottom: 0%;
+        left: 0%;
+        width: 100%;
     }
+
+    .content {
+        padding-bottom: 0px; /* 푸터 크기만큼 여백을 주어야 스크롤이 겹치지 않음 */
+        height: calc(100vh - 60px); /* 푸터 크기를 제외한 높이 */
+        overflow-y: auto; /* 스크롤 가능하도록 설정 */
+        padding: 0px; /* 콘텐츠 간격 */
+      }
 
 
     .center-wrapper {
@@ -35,7 +46,7 @@
     }
 
     .rounded-image {
-        border-radius: 0px; /* 필요에 따라 border-radius를 조절하세요. */
+        border-radius: px; /* 필요에 따라 border-radius를 조절하세요. */
         width: 100%; /* 이미지를 부모 요소에 꽉 채우도록 width 속성 추가 */
         height: auto;
     }
@@ -54,8 +65,14 @@
         text-align: center;
     }
 
+    p.card-title {
+        text-align: center;
+        
+    }
+
     p {
         text-align: center;
+        
     }
 
     .atag
@@ -154,3 +171,5 @@ img {
 .popup-content.active {
     animation: fadeIn 0.3s ease-in-out;
 }
+
+/* 오일신문 발행 섹션 추가 */
