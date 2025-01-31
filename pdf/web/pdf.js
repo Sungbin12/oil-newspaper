@@ -28,6 +28,6 @@ window.onload = function() {
         // 3초 후 다른 페이지로 리디렉션
         setTimeout(function() {
             window.location.href = "../../../../../../../"; // 원하는 페이지 URL로 변경
-        }, 3000); // 3초 후 리디렉션
+        }, 0); // 3초 후 리디렉션
     }
 };
