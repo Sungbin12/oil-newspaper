@@ -22,12 +22,14 @@ window.onload = function() {
     });
 
     // 3. 네이버 브라우저 확인
-    var userAgent = navigator.userAgent;
-    if (userAgent.indexOf("NAVER") > -1) {
-        alert("네이버 브라우저로 접속할 경우에는 정상적인 서비스가 불가능합니다.\n다른 브라우저로 다시 접속해주세요.");
-        // 3초 후 다른 페이지로 리디렉션
-        setTimeout(function() {
-            location.replace= "../../../../../../../"; // 원하는 페이지 URL로 변경
-        }, 0); // 3초 후 리디렉션
-    }
+var userAgent navigator.userAgent
+11
+if (userAgent.indexOf("NAVER") > -1)
+alert("네이버 브라우저로 접속할 경우에는
+정상적인 서비스가 불가능합니다.In다른 브라우저로
+다시 접속해주세요.");
+// 현재 페이지 기록을 삭제하고 바로
+리디렉션
+window.location.replace("../.....
+./../../"); // 원하는 페이지 URL로 변경
 };
