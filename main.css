@@ -25,10 +25,12 @@
         text-align: center;
         padding: 1em;
         position: fixed;
-        bottom: 0%;
-        left: 0%;
+        bottom: 0;
+        left: 0;
         width: 100%;
+        z-index: 1000; /* 다른 요소 위에 오도록 설정 */
     }
+    
 
     .content {
         padding-bottom: 0px; /* 푸터 크기만큼 여백을 주어야 스크롤이 겹치지 않음 */
